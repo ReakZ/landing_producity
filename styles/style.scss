@@ -1,0 +1,814 @@
+$bluedark: #173a56;
+$main-font: "Open Sans", sans-serif;
+$graylight: #bcd0e5;
+$yellowdark: #2f281e;
+$yellowdark2: #544837;
+$white: #ffffff;
+$orange: #ff9900;
+$orange2: #ff7549;
+$gray: #c6c6c6;
+$sub-font: "Poppins", sans-serif;
+$shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+$backgroundContact: #ffeee1;
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+@mixin h2 {
+  font-family: $sub-font;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 44px;
+  line-height: 54px;
+}
+@mixin h3 {
+  font-family: $main-font;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 34px;
+  line-height: 46px;
+  text-align: center;
+  color: $yellowdark;
+}
+
+@mixin subtitle {
+  font-family: $main-font;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 26px;
+  color: $yellowdark2;
+}
+@mixin text {
+  font-family: $sub-font;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+@mixin h4 {
+  font-family: $main-font;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 34px;
+  /* or 142% */
+
+  color: $yellowdark2;
+}
+
+@mixin button {
+  border-radius: 4px;
+  font-family: $main-font;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  /* identical to box height */
+  text-align: center;
+  height: 46px;
+  width: 104px;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+}
+
+@mixin button-ligth {
+  @include button();
+  border: 1px solid $graylight;
+  color: $bluedark;
+  background-color: transparent;
+}
+
+@mixin button-yellow {
+  @include button();
+  border: 1px solid $orange;
+  color: $white;
+  background: $orange;
+}
+
+@mixin button-noborder {
+  @include button();
+  border: none;
+  color: $orange;
+  background: transparent;
+}
+
+header {
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+//
+//
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: $orange;
+}
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 78px;
+}
+
+.logo {
+  &__icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 12px;
+  }
+}
+.menu {
+  flex-direction: row;
+  display: flex;
+  &__item {
+    margin-left: 17px;
+  }
+  &__item:nth-child(1) {
+    margin-left: 0;
+  }
+  &__link:hover {
+    color: $orange;
+  }
+  &__link {
+    font-family: $main-font;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 28px;
+    color: $yellowdark;
+  }
+}
+
+.button_block {
+  & > .button-light {
+    margin-right: 20px;
+  }
+}
+.button-light {
+  @include button-ligth();
+}
+.button-yellow {
+  @include button-yellow();
+}
+.button-noborder {
+  @include button-noborder();
+}
+// Hero Block
+
+.hero {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  &__image {
+    margin-left: 100px;
+    width: 642.29px;
+    height: 494.83px;
+  }
+  &__yellowButton {
+    height: 53px;
+    width: 174px;
+  }
+  &__button {
+    height: 53px;
+    width: 174px;
+    text-decoration: underline;
+  }
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  &__buttonBlock {
+    display: flex;
+    flex-direction: row;
+    margin-top: 45px;
+  }
+  &__buttonBlock > .button-yellow {
+    margin-right: 45px;
+  }
+}
+
+h2 {
+  @include h2();
+}
+
+p {
+  margin-top: 20px;
+  @include text();
+}
+
+// weDisng
+
+.weDisng {
+  margin-top: 111px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  & > h3 {
+    margin-bottom: 70px;
+    font-weight: bold;
+    width: 460px;
+  }
+  &__button {
+    @include button-yellow();
+    background-color: $orange2;
+    height: 53px;
+    width: 171.5452880859375px;
+    left: 642.0694580078125px;
+    margin-top: 34px;
+  }
+}
+
+.cards {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+}
+
+.card {
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 50px;
+  align-items: center;
+  &__icon {
+    width: 55px;
+    height: 50px;
+  }
+  &__title {
+    margin-top: 30px;
+    font-family: $main-font;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 30px;
+    /* identical to box height */
+
+    color: $yellowdark;
+  }
+  &__subtitle {
+    margin-top: 16px;
+    font-family: $main-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    /* or 162% */
+    text-align: center;
+    color: $yellowdark2;
+  }
+
+  .card:nth-child(1) {
+    margin-right: 0;
+  }
+}
+h3 {
+  @include h3();
+}
+
+//
+.marketing {
+  margin-top: 80px;
+  padding-top: 30px;
+  &__title {
+    @include h3();
+    text-align: left;
+  }
+  &__subtitle {
+    @include subtitle();
+    margin-top: 14px;
+    //Join 40,000+ other marketers and get proven strategies on email marketing
+  }
+  &__filter {
+    display: flex;
+    flex-direction: row;
+    margin-top: 24px;
+    &__tag {
+      background: $white;
+      border: 1px solid #d7d7d7;
+      box-sizing: border-box;
+      border-radius: 90px;
+      padding: 0 14px;
+      font-family: $main-font;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 13px;
+      line-height: 28px;
+      margin-left: 7px;
+    }
+    &__tag:nth-child(1) {
+      margin-left: 0;
+    }
+    &_active {
+      background: #ff9900;
+      color: $white;
+    }
+  }
+}
+
+.marketingCards {
+  margin-top: 31px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+  // column-gap: 12rem;
+  row-gap: 30px;
+}
+
+.markCard {
+  display: flex;
+  flex-direction: column;
+  width: 377px;
+  height: 377px;
+  // margin-right: 34px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  //ilter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.05));
+  &__image {
+    width: 377px;
+    height: 200px;
+  }
+  &__title {
+    margin-top: 24px;
+    margin: 24px 20px 0;
+    @include h4;
+  }
+}
+
+.markCard:hover > .markCard__title,
+.markCard2:hover > .markCard2__title {
+  color: $orange2;
+}
+
+.markCard2 {
+  display: flex;
+  flex-direction: column;
+  width: 787px;
+  height: 377px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  // margin-right: 34px;
+
+  &__image {
+    width: 787px;
+    height: 200px;
+  }
+  &__title {
+    margin: 24px 20px 0;
+
+    @include h4;
+  }
+}
+
+.tags {
+  display: flex;
+  flex-direction: row;
+  margin: 24px 20px 0;
+}
+@mixin tag {
+  background: #f5f5f5;
+  border: 1px solid #d7d7d7;
+  box-sizing: border-box;
+  border-radius: 90px;
+  padding: 0 14px;
+  font-family: $main-font;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 28px;
+  margin-left: 7px;
+}
+
+.tag {
+  @include tag();
+}
+
+// about
+
+.aboutUs {
+  display: flex;
+  flex-direction: column;
+  margin-top: 90px;
+}
+
+.teamBlock {
+  display: flex;
+  flex-direction: row;
+  margin-top: 45px;
+  justify-content: space-between;
+  &__item {
+    height: 141px;
+    width: 377px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 35px;
+    &__header {
+      display: flex;
+      flex-direction: column;
+    }
+    box-shadow: $shadow;
+    &__ava {
+      height: 98px;
+      width: 98px;
+      //box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.15);
+      margin-left: -75px;
+    }
+
+    &__position {
+      font-family: $main-font;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 26px;
+      /* identical to box height, or 186% */
+
+      color: #544837;
+    }
+    &__name {
+      font-family: $main-font;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 26px;
+      /* identical to box height, or 162% */
+
+      color: #544837;
+    }
+    &__email {
+      font-family: $main-font;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 26px;
+      /* identical to box height, or 186% */
+
+      color: #1943ef;
+    }
+  }
+}
+.coverContactUs {
+  background-color: $backgroundContact;
+}
+.contactUs {
+  margin-top: 101px;
+  padding: 60px 0 90px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  &__block:nth-child(2) {
+    width: 570px;
+  }
+  &__block {
+    display: flex;
+    flex-direction: column;
+    width: 530px;
+    &__title {
+      @include h3();
+      text-align: left;
+    }
+
+    &__text {
+      margin-top: 17px;
+      @include subtitle();
+    }
+    &__contact {
+      margin-top: 33px;
+      font-family: $main-font;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 25px;
+      line-height: 26px;
+      /* identical to box height, or 104% */
+      color: $yellowdark2;
+
+      &__icon {
+        width: 25px;
+        height: 25px;
+      }
+      &__email {
+        margin-top: 33px;
+        font-family: "Open Sans", sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 25px;
+        line-height: 26px;
+        color: $yellowdark2;
+      }
+    }
+    &__contact:nth-child(2) {
+      margin-top: 19px;
+    }
+
+    &__inputBlock {
+      display: flex;
+      flex-direction: row;
+      margin-top: 62px;
+      justify-content: space-between;
+    }
+    &__input {
+      width: 280.29px;
+      height: 45px;
+      border-radius: 5px;
+      background-color: $white;
+      border: none;
+      padding: 10px 22px 9px 20px;
+      outline: none;
+    }
+    &__input::placeholder {
+      font-family: $main-font;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 26px;
+      /* identical to box height, or 162% */
+
+      color: $gray;
+    }
+    &__area {
+      height: 159px;
+      width: 577px;
+      border-radius: 5px;
+      border: none;
+      margin-top: 18px;
+      padding: 10px 22px 9px 20px;
+      margin-bottom: 20px;
+      outline: none;
+    }
+
+    &__area::placeholder {
+      font-family: $main-font;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 26px;
+      /* identical to box height, or 162% */
+
+      color: $gray;
+    }
+  }
+}
+
+footer {
+  padding: 58px 0 52px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.footerBlock {
+  display: flex;
+  flex-direction: column;
+  &__title {
+    font-family: $main-font;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    /* identical to box height, or 150% */
+
+    color: $yellowdark;
+  }
+
+  &__item {
+    font-family: $sub-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 35px;
+    /* or 219% */
+
+    color: $yellowdark2;
+  }
+  &__item:hover {
+    color: $orange2;
+  }
+}
+
+// Responsive
+
+@media screen and (max-width: 769px) {
+  .nav {
+    height: 180px;
+  }
+
+  .textBlock__buttonBlock {
+    justify-content: center;
+  }
+  .menu {
+    position: absolute;
+    top: 130px;
+
+    left: 150px;
+    &__item {
+      margin-left: 87px;
+    }
+  }
+  .markCard {
+    width: 230px;
+  }
+  .markCard__image {
+    width: 230px;
+  }
+  .markCard__title {
+    margin-bottom: 0;
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .hero {
+    flex-direction: column-reverse;
+    &__image {
+      width: 500px;
+      margin-left: 0;
+    }
+  }
+
+  .container {
+    width: 500px;
+    height: auto;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .card {
+    margin-top: 20px;
+    margin-right: 0;
+  }
+
+  .markCard2 {
+    &__image {
+      width: 500px;
+      height: auto;
+    }
+  }
+  .contactUs {
+    flex-direction: column;
+  }
+  footer {
+    flex-direction: column;
+  }
+  .footerBlock {
+    margin-top: 20px;
+  }
+
+  .teamBlock {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__item {
+      margin-bottom: 50px;
+    }
+  }
+  .marketingCards {
+    align-items: center;
+  }
+  .logo {
+    flex-direction: row;
+    display: flex;
+  }
+}
+@media screen and (max-width: 576px) {
+  .nav {
+    height: 220px;
+  }
+
+  .textBlock__buttonBlock {
+    justify-content: center;
+  }
+  .menu {
+    top: 180px;
+
+    left: 50px;
+    &__item {
+      margin-left: 57px;
+    }
+  }
+  .markCard {
+    width: 180px;
+    height: 240px;
+  }
+  .markCard__image {
+    width: 180px;
+    height: auto;
+  }
+  .markCard__title {
+    margin-bottom: 0;
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .hero {
+    flex-direction: column-reverse;
+    &__image {
+      width: 400px;
+      margin-left: 0;
+    }
+  }
+
+  .container {
+    width: 400px;
+    height: auto;
+  }
+
+  .cards {
+    margin-top: 50px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .card {
+    margin-top: 20px;
+    margin-right: 0;
+  }
+
+  .markCard2 {
+    width: 400px;
+    height: 240px;
+
+    &__image {
+      width: 400px;
+      height: auto;
+    }
+    &__title {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+  .contactUs {
+    flex-direction: column;
+  }
+  footer {
+    flex-direction: column;
+  }
+  .footerBlock {
+    margin-top: 20px;
+  }
+
+  .teamBlock {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__item {
+      margin-bottom: 20px;
+      width: 280px;
+      padding: 0 15px;
+    }
+  }
+  .marketingCards {
+    align-items: center;
+  }
+  .logo {
+    flex-direction: row;
+    display: flex;
+  }
+  .contactUs__block {
+    width: 400px;
+  }
+  .contactUs__block__area {
+    width: 400px;
+  }
+  .contactUs__block__input {
+    width: 180px;
+  }
+  .contactUs__block:nth-child(2) {
+    width: 400px;
+  }
+  .menu {
+  }
+  .button_block {
+    width: 120px;
+    row-gap: 10px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    display: flex;
+  }
+  .weDisng > h3 {
+    margin-bottom: 0;
+  }
+}
